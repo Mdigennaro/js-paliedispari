@@ -49,7 +49,7 @@ console.log('Il numero del computer è ', getNumeroCasuale(1, 5));
 
 //sommiamo i due numeri
 let mioRisultato = calcolo( numeroInserito , numeroCpu);
-console.log('A',mioRisultato);
+console.log(mioRisultato);
 
 
 
@@ -67,7 +67,7 @@ function getNumeroCasuale(min, max) {
 function calcolo(numeroInserito, numeroCpu){
 
   let risultato = numeroInserito + numeroCpu;
-  console.log('B',risultato)
+  console.log(risultato)
   return risultato;
 
 }
