@@ -34,40 +34,70 @@ console.log(value);
 //Dichiariamo chi ha vinto.
 
 //Chiedere se si vuole pari o dispari
-const pariODispari = prompt('Pari o Dispari?');
-console.log('Hai scelto :', pariODispari);
+const gioco = prompt('Pari o Dispari?');
+console.log('Hai scelto:', gioco);
 
 //Chiedere un numero da 1 a 5
-const numeroInserito = prompt('Scegli un numero da 1 a 5');
+let numeroInserito = prompt('Scegli un numero da 1 a 5');
 console.log('Hai scelto il numero ',numeroInserito);
 
 //Estrarre il numero random il numero del computer
 const numeroCpu = getNumeroCasuale(1, 5);
+let numCpu = numeroCpu
 
-console.log('Il numero del computer è ', getNumeroCasuale(1, 5));
+console.log('Il numero del computer è ', numCpu);
 
 
 //sommiamo i due numeri
-let mioRisultato = calcolo( numeroInserito , numeroCpu);
-console.log(mioRisultato);
+let mioRisultato = calcolo(numeroInserito, numCpu);
+console.log('Il risultato dei due numeri è: ',mioRisultato);
+
+//Stabilisco se la somma è pari o dispari
+const risultato = pariODispari(mioRisultato);
+console.log('Pari o dispari:',risultato);
+
+//dichiariamo il vincitore
+if (gioco === risultato) {
+  console.log('Hai vinto');
+}else{
+  console.log('Ha vinto il computer');
+}
 
 
 
 
+
+
+//function per stabilire se il numero è pari o dispari
+function pariODispari(n) {
+
+  if (n % 2 === 0) {
+
+    return 'pari';
+
+  }
+
+  return 'dispari';
+
+}
+
+
+
+
+
+//function per sommare
+function calcolo(num1,num2) {
+  
+  let risultato = +num1 + +num2;
+  return risultato;
+
+}
 
 //function per numero random da 1 a 5
 
 function getNumeroCasuale(min, max) {
 
-  return Math.floor(Math.random()*(max - min + 1));
+  return Math.floor(Math.random()*(max - min + 1) + min);
   
 }
 
-//function per sommare
-function calcolo(numeroInserito, numeroCpu){
-
-  let risultato = numeroInserito + numeroCpu;
-  console.log(risultato)
-  return risultato;
-
-}
